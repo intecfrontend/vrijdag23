@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p id="demo"></p>
+    RR: <input id="ta" name="ta" onkeyup="clean('ta')" onkeydown="clean('ta')" placeholder="Vul je RR in"></textarea>
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+        var textfield = document.getElementById("ta");
+
+        function clean(el) {
+            /* var regex = /[^0-9]/gi;*/
+            var regex = /[^0-9?!be,]/gi;
+            if (textfield.value.search(regex) > -1) {
+                textfield.value = textfield.value.replace(regex, "");
+            }
+        }
+
+        function myFunction() {
+            var GebJaar = textfield.value.substring(0, 2);
+            document.getElementById("demo").innerHTML = GebJaar;
+        }
+    </script>
+
+
+</body>
+
+</html>
